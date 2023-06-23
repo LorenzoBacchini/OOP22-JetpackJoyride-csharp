@@ -4,6 +4,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BacchiniLorenzo", "Bacchini
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BacchiniLorenzoTest", "BacchiniLorenzoTest\BacchiniLorenzoTest.csproj", "{FFB8C8C1-94FB-4146-BBB1-6AB178549C55}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SanchiEmanuele", "SanchiEmanuele\SanchiEmanuele.csproj", "{D83BD077-313E-40C2-9AFE-6575F43216D7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SanchiEmanueleTest", "SanchiEmanueleTest\SanchiEmanueleTest.csproj", "{43508AE1-FA80-4201-914F-DDE3F946D6B2}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -18,5 +22,13 @@ Global
 		{FFB8C8C1-94FB-4146-BBB1-6AB178549C55}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FFB8C8C1-94FB-4146-BBB1-6AB178549C55}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FFB8C8C1-94FB-4146-BBB1-6AB178549C55}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D83BD077-313E-40C2-9AFE-6575F43216D7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D83BD077-313E-40C2-9AFE-6575F43216D7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D83BD077-313E-40C2-9AFE-6575F43216D7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D83BD077-313E-40C2-9AFE-6575F43216D7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{43508AE1-FA80-4201-914F-DDE3F946D6B2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{43508AE1-FA80-4201-914F-DDE3F946D6B2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{43508AE1-FA80-4201-914F-DDE3F946D6B2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{43508AE1-FA80-4201-914F-DDE3F946D6B2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
