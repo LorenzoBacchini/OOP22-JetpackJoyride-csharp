@@ -23,9 +23,12 @@ public class MoneyPatternTest
         const int moneyListSize = 28;
         List<Money> moneyList = _moneyPatternLoader.GetMoneyPattern();
         Assert.AreEqual(moneyListSize, moneyList.Count());
-        Assert.AreEqual(2330d, moneyList.RemoveAt(index).Pos().GetX());
-        Assert.AreEqual(2285d, moneyList.RemoveAt(index).Pos().GetX());
-        Assert.AreEqual(2248d, moneyList.RemoveAt(index).Pos().GetX());
+        Assert.AreEqual(2330d, moneyList[index].Pos.GetX());
+        moneyList.RemoveAt(index);
+        Assert.AreEqual(2285d, moneyList[index].Pos.GetX());
+        moneyList.RemoveAt(index);
+        Assert.AreEqual(2248d, moneyList[index].Pos.GetX());
+        moneyList.RemoveAt(index);
 
         //Removing all elements except the last one
         while (moneyList.Count > 1)
@@ -34,6 +37,6 @@ public class MoneyPatternTest
         }
         
         //Check also the last element of the file
-        Assert.AreEqual(2566d, moneyList.RemoveAt(index).Pos().GetX());
+        Assert.AreEqual(2566d, moneyList[index].Pos.GetX());
     }
 }

@@ -1,6 +1,5 @@
-﻿using AnnibaliniLorenzo.JetpackJoyride.Point2d;
-using AnnibaliniLorenzo.JetpackJoyride.Vector2d;
-using BurreliMattia.JetpackJoyride.Api.Hitbox;
+﻿using AnnibaliniLorenzo.JetpackJoyride;
+using BurreliMattia.JetpackJoyride.Api;
 
 namespace BacchiniLorenzo.JetpackJoyride.Api;
 
@@ -47,5 +46,5 @@ public interface IGameObject
     ///  get the current hitbox of the GameObject
     /// </summary>
     /// <returns>the GameObject's hitbox</returns>>
-    Hitbox Hitbox { get; }
+    IHitbox Hitbox { get; }
 }

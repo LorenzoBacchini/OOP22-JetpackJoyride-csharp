@@ -1,6 +1,5 @@
-﻿using AnnibaliniLorenzo.JetpackJoyride.Point2d;
-using AnnibaliniLorenzo.JetpackJoyride.Vector2d;
-using BurreliMattia.JetpackJoyride.Api.Hitbox;
+﻿using AnnibaliniLorenzo.JetpackJoyride;
+using BurreliMattia.JetpackJoyride.Api;
 
 namespace BacchiniLorenzo.JetpackJoyride.Impl;
 
@@ -13,5 +12,5 @@ public class Rocket : ObstacleActivable
     /// <summary>
     /// Constructor to create a Rocket obstacle.
     /// </summary>
-    public Rocket(Point2d pos, Vector2d vel, Hitbox hitbox) : base(pos, vel, hitbox){}
+    public Rocket(Point2d pos, Vector2d vel, IHitbox hitbox) : base(pos, vel, hitbox){}
 }
