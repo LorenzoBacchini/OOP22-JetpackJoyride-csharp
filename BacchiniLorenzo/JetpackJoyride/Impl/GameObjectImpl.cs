@@ -35,7 +35,7 @@ public class GameObjectImpl : IGameObject
     /// Constructor to create a GameObject
     /// </summary>
 
-    public GameObjectImpl(Point2d pos, Vector2d vel, Hitbox hitbox)
+    public GameObjectImpl(Point2d pos, Vector2d vel, Hitbox hitbox) 
     {
         Pos = new Point2d(pos.GetX(), pos.GetY());
         Vel = new Vector2d(vel.GetX(), vel.GetY());
