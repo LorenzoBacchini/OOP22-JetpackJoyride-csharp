@@ -1,7 +1,6 @@
 ﻿using System;
-using AnnibaliniLorenzo.JetpackJoyride.Point2d;
-using AnnibaliniLorenzo.JetpackJoyride.Vector2d;
-using BurreliMattia.JetpackJoyride.Api.Hitbox;
+using AnnibaliniLorenzo.JetpackJoyride;
+using BurreliMattia.JetpackJoyride.Api;
 
 namespace BacchiniLorenzo.JetpackJoyride.Impl;
 
@@ -21,7 +20,7 @@ public abstract class ObstacleActivable : ObstacleImpl
     /// <summary>
     /// Constructor of the class ObstacleActivable
     /// </summary>
-    public ObstacleActivable(Point2d pos, Vector2d vel, Hitbox hitbox) : base(pos, vel, hitbox)
+    public ObstacleActivable(Point2d pos, Vector2d vel, IHitbox hitbox) : base(pos, vel, hitbox)
     {
         SetActiveOff();
         End = false;

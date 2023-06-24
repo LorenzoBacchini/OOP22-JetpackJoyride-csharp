@@ -1,6 +1,5 @@
-﻿using AnnibaliniLorenzo.JetpackJoyride.Point2d;
-using AnnibaliniLorenzo.JetpackJoyride.Vector2d;
-using BurreliMattia.JetpackJoyride.Api.Hitbox;
+﻿using AnnibaliniLorenzo.JetpackJoyride;
+using BurreliMattia.JetpackJoyride.Api;
 
 namespace BacchiniLorenzo.JetpackJoyride.Impl;
 
@@ -22,5 +21,5 @@ public class Money : GameObjectImpl
     /// <param name="hitbox">
     /// the hitbox of the money
     /// </param>>
-    public Money(Point2d pos, Vector2d vel, Hitbox hitbox) : base(pos, vel, hitbox){}
+    public Money(Point2d pos, Vector2d vel, IHitbox hitbox) : base(pos, vel, hitbox){}
 }

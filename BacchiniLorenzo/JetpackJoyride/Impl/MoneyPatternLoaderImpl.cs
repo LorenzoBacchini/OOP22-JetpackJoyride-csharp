@@ -1,10 +1,10 @@
 ﻿using System;
 using System.IO;
 using System.Collections.Generic;
-using AnnibaliniLorenzo.JetpackJoyride.Point2d;
-using AnnibaliniLorenzo.JetpackJoyride.Vector2d;
-using BurreliMattia.JetpackJoyride.Api.Hitbox;
-using BurreliMattia.JetpackJoyride.Impl.HitboxImpl;
+using System.Reflection;
+using AnnibaliniLorenzo.JetpackJoyride;
+using BurreliMattia.JetpackJoyride.Api;
+using BurreliMattia.JetpackJoyride.Impl;
 using BacchiniLorenzo.JetpackJoyride.Api;
 
 namespace BacchiniLorenzo.JetpackJoyride.Impl;
@@ -28,7 +28,7 @@ public class MoneyPatternLoaderImpl : IMoneyPatternLoader
      */
     private readonly int _availableFile;
     private readonly int _minAvailableFile;
-    private const string Filename = "/money";
+    private string _fileName = @"..\Data\money";
     private const int Nfile = 4;
     //Range to change the y coordinate of the money.
     private const int Range = 150;
@@ -75,10 +75,14 @@ public class MoneyPatternLoaderImpl : IMoneyPatternLoader
         Random rnd = new Random();
         string fileNumber;
         fileNumber = rnd.Next(_minAvailableFile, _availableFile + 1).ToString();
+        _fileName += fileNumber;
+        _fileName += ".txt";
+        _fileName = Path.Combine(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location), _fileName);
+
         string[] lines;
         try 
         {
-            lines = File.ReadAllLines(Filename);
+            lines = File.ReadAllLines(_fileName);
         }
         catch (IOException e)
         {
@@ -95,7 +99,7 @@ public class MoneyPatternLoaderImpl : IMoneyPatternLoader
             Point2d startPosition = new Point2d(x, y);
             Point2d finishPosition = new Point2d(x - Limit, startPosition.GetY());
             Vector2d vec = new Vector2d(finishPosition, startPosition);
-            Hitbox hitbox = new HitboxImpl(15.0, 15.0, startPosition);
+            IHitbox hitbox = new HitboxImpl(15.0, 15.0, startPosition);
             moneyList.Add(new Money(startPosition, vec, hitbox));
         }
 
