@@ -21,8 +21,9 @@ public class SliderTests
     [Test]
     public void SliderTest()
     {
+        //Create a slider
         ISlider slider = new SliderImpl(100);
-        Console.WriteLine("ciao" + slider.Pos);
+        //Start slider until position is 50
         slider.Run();
         while (slider.Pos < 50)
         {
