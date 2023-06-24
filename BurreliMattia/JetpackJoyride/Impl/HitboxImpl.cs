@@ -1,6 +1,4 @@
 ﻿using BurreliMattia.JetpackJoyride.Api;
-using AnnibaliniLorenzo.JetpackJoyride.Point2d;
-using AnnibaliniLorenzo.JetpackJoyride.Vector2d;
 
 namespace BurreliMattia.JetpackJoyride.Impl;
 
@@ -64,8 +62,8 @@ public double Height => this._height;
     /// </summary>
     /// <param name="posObject"></param>
     private void CalcPointPosition(Point2d posObject) {
-        this._upLeftPoint = new Point2d(posObject.getX() - this._width / 2.0, posObject.getY() - this._height / 2.0);
-        this._downRightPoint = new Point2d(posObject.getX() + this._width / 2.0, posObject.getY() + this._height / 2.0);
+        this._upLeftPoint = new Point2d(posObject.GetX() - this._width / 2.0, posObject.GetY() - this._height / 2.0);
+        this._downRightPoint = new Point2d(posObject.GetX() + this._width / 2.0, posObject.GetY() + this._height / 2.0);
     }
     
     public bool CheckCollision(IHitbox hitbox)
@@ -73,14 +71,14 @@ public double Height => this._height;
         return (this.CheckCollisionHitboxAndPoint(hitbox.UpLeftPoint)
                 || this.CheckCollisionHitboxAndPoint(hitbox.DownRightPoint)
                 || this.CheckCollisionHitboxAndPoint(
-                    new Point2d(hitbox.UpLeftPoint.getX(), hitbox.DownRightPoint.getY()))
+                    new Point2d(hitbox.UpLeftPoint.GetX(), hitbox.DownRightPoint.GetY()))
                 || this.CheckCollisionHitboxAndPoint(
-                    new Point2d(hitbox.DownRightPoint.getX(), hitbox.UpLeftPoint.getY())))
+                    new Point2d(hitbox.DownRightPoint.GetX(), hitbox.UpLeftPoint.GetY())))
                && hitbox.HitBoxActive && this.HitBoxActive;
     }
     
     private bool CheckCollisionHitboxAndPoint( Point2d point) {
-        return point.getX() >= this.UpLeftPoint.getX() && point.getX() <= this.DownRightPoint.getX()
-                                                       && point.getY() >= this.UpLeftPoint.getY() && point.getY() <= this.DownRightPoint.getY();
+        return point.GetX() >= this.UpLeftPoint.GetX() && point.GetX() <= this.DownRightPoint.GetX()
+                                                       && point.GetY() >= this.UpLeftPoint.GetY() && point.GetY() <= this.DownRightPoint.GetY();
     }
 }

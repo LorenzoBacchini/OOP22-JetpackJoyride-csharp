@@ -10,4 +10,9 @@
       <Folder Include="JetpackJoyride\" />
     </ItemGroup>
 
+    <ItemGroup>
+      <ProjectReference Include="..\BacchiniLorenzo\BacchiniLorenzo.csproj" />
+      <ProjectReference Include="..\BurreliMattia\BurreliMattia.csproj" />
+    </ItemGroup>
+
 </Project>

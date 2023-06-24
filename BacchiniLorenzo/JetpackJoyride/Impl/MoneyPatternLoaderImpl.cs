@@ -28,7 +28,7 @@ public class MoneyPatternLoaderImpl : IMoneyPatternLoader
      */
     private readonly int _availableFile;
     private readonly int _minAvailableFile;
-    private string _fileName = @"..\Data\money";
+    private string _fileName = @"../../../Data\money";
     private const int Nfile = 4;
     //Range to change the y coordinate of the money.
     private const int Range = 150;
@@ -77,7 +77,6 @@ public class MoneyPatternLoaderImpl : IMoneyPatternLoader
         fileNumber = rnd.Next(_minAvailableFile, _availableFile + 1).ToString();
         _fileName += fileNumber;
         _fileName += ".txt";
-        _fileName = Path.Combine(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location), _fileName);
 
         string[] lines;
         try 

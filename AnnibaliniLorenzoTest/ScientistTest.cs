@@ -1,52 +1,50 @@
-using OOP22_JetpackJoyride_csharp.OOP22_JetpackJoyride_csharp.AnnibaliniLorenzo.Api.Scientist;
-using OOP22_JetpackJoyride_csharp.OOP22_JetpackJoyride_csharp.AnnibaliniLorenzo.Api.Direction;
-using OOP22_JetpackJoyride_csharp.OOP22_JetpackJoyride_csharp.AnnibaliniLorenzo.Impl.ScientistImpl;
-using OOP22_JetpackJoyride_csharp.OOP22_JetpackJoyride_csharp.AnnibaliniLorenzo.Point2d;
-using OOP22_JetpackJoyride_csharp.OOP22_JetpackJoyride_csharp.AnnibaliniLorenzo.Vector2d;
-using OOP22_JetpackJoyride_csharp.OOP22_JetpackJoyride_csharp.BurelliMattia.api.Hitbox;
-using OOP22_JetpackJoyride_csharp.OOP22_JetpackJoyride_csharp.BurelliMattia.Impl.HitboxImpl;
+using AnnibaliniLorenzo.JetpackJoyride;
+using AnnibaliniLorenzo.JetpackJoyride.Api;
+using AnnibaliniLorenzo.JetpackJoyride.Impl;
+using BurreliMattia.JetpackJoyride.Api;
+using BurreliMattia.JetpackJoyride.Impl;
 
-namespace OOP22_JetpackJoyride_csharp.OOP22_JetpackJoyride_csharp.AnnibaliniLorenzoTest
+namespace AnnibaliniLorenzoTest;
+    
+[TestClass]
+    
+public class ScientistTest
 {
-    [TestClass]
-    public class ScientistTest
+    private ScientistImpl scientist;
+    private static Point2d point = new Point2d(0, 0);
+    private Vector2d vector = new Vector2d(1, 0);
+    private IHitbox hitbox = new HitboxImpl(1, 1, point);
+
+    [TestInitialize]
+    public void init()
     {
-        private Scientist scientist;
-        private Point2d point = new Point2dImpl(0, 0);
-        private Vector2d vector = new Vector2dImpl(1, 0);
-        private Hitbox hitbox = new HitboxImpl(1, 1);
+        scientist = new ScientistImpl(IDirection.Right, point, vector, hitbox);
+    }
 
-        [TestInitialize]
-        public void init()
-        {
-            scientist = new ScientistImpl(Direction.RIGHT, point, vector, hitbox);
-        }
+    [TestMethod]
+    public void testGetDirection()
+    {
+        Assert.AreEqual(IDirection.Right, scientist.GetDirection());
+    }
 
-        [TestMethod]
-        public void testGetDirection()
-        {
-            Assert.AreEqual(Direction.RIGHT, scientist.getDirection());
-        }
+    [TestMethod]
+    public void testIsAlive()
+    {
+        Assert.IsTrue(scientist.IsAlive());
+    }
 
-        [TestMethod]
-        public void testIsAlive()
-        {
-            Assert.IsTrue(scientist.isAlive());
-        }
+    [TestMethod]
+    public void testKillScientist()
+    {
+        scientist.KillScientist();
+        Assert.IsFalse(scientist.IsAlive());
+    }
 
-        [TestMethod]
-        public void testKillScientist()
-        {
-            scientist.killScientist();
-            Assert.IsFalse(scientist.isAlive());
-        }
-
-        [TestMethod]
-        public void testNextPosition()
-        {
-            scientist.nextPosition();
-            Assert.AreEqual(1, scientist.getPosition().getX());
-            Assert.AreEqual(0, scientist.getPosition().getY());
-        }
+    [TestMethod]
+    public void testNextPosition()
+    {
+        scientist.NextPosition();
+        Assert.AreEqual(1, scientist.Pos.GetX());
+        Assert.AreEqual(0, scientist.Pos.GetY());
     }
 }

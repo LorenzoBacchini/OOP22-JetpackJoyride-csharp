@@ -1,5 +1,3 @@
-using System.Runtime.InteropServices.JavaScript;
-using OOP22_JetpackJoyride_csharp.AnnibaliniLorenzo.Api;
 namespace AnnibaliniLorenzo.JetpackJoyride.Api;
 
 /// <summary>
@@ -12,13 +10,13 @@ public interface IScientist
     /// Method to get the Scientist's direction.
     /// </summary>
     /// <return> the current direction of the scientist </return>
-    Direction GetDirection();
+    IDirection GetDirection();
 
     /// <summary>
     /// Method to get if the scientist is alive.
     /// </summary>
     /// <return> true if the scientist is alive, false otherwise</return>
-    JSType.Boolean IsAlive();
+    bool IsAlive();
 
     /// <summary>
     /// Method to kill the Scientist's.

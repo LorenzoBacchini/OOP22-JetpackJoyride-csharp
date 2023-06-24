@@ -1,4 +1,3 @@
-using System;
 using AnnibaliniLorenzo.JetpackJoyride;
 
 namespace AnnibaliniLorenzo.JetpackJoyride

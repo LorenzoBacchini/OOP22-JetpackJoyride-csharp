@@ -20,4 +20,8 @@
       <ProjectReference Include="..\BacchiniLorenzo\BacchiniLorenzo.csproj" />
     </ItemGroup>
 
+    <ItemGroup>
+      <Folder Include="Data\" />
+    </ItemGroup>
+
 </Project>

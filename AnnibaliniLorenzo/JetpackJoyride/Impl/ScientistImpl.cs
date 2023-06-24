@@ -1,17 +1,16 @@
-using System;
 using AnnibaliniLorenzo.JetpackJoyride.Api;
-using BacchiniLorenzo.JetpackJoyride.Api.IGameObject;
-using BurelliMattia.JetpackJoyride.Api.IHitbox;
+using BacchiniLorenzo.JetpackJoyride.Impl;
+using BurreliMattia.JetpackJoyride.Api;
 
 namespace AnnibaliniLorenzo.JetpackJoyride.Impl;
 
 /// <summary>
 /// Standard scientist implementation.
 /// </summary>
-public  class ScientistImpl : GameObjectImpl
+public  class ScientistImpl : GameObjectImpl, IScientist
 {
 
-    private Direction _direction;
+    private IDirection _direction;
     private bool _life;
 
     /// <summary>
@@ -21,21 +20,21 @@ public  class ScientistImpl : GameObjectImpl
     /// <param name="point"> point2D object </param>
     /// <param name="velocity"> velocity vector </param>
     /// <param name="hitbox"> hitbox object </param>
-    public ScientistImpl( Direction direction,  Point2d point,  Vector2d velocity,  IHitbox hitbox) {
-        super(point, velocity, hitbox);
+    public ScientistImpl( IDirection direction,  Point2d point,  Vector2d velocity,  IHitbox hitbox) : base(point, velocity, hitbox)
+    {
         if (direction == null) {
-            throw new IllegalArgumentException("Input can't be empty");
+            throw new ArgumentException("Input can't be empty");
         } else {
             this._direction = direction;
             this._life = true;
         }
     }
 
-    public Direction GetDirection() {
+    public IDirection GetDirection() {
         return this._direction;
     }
 
-    public Boolean IsAlive() {
+    public bool IsAlive() {
         return this._life;
     }
 
@@ -44,10 +43,12 @@ public  class ScientistImpl : GameObjectImpl
     }
 
    public void NextPosition() {
-        if (_direction == Direction.Left) {
-            super.SetPos(super.GetCurrentPos().Sub(super.GetCurrentVel()));
-        } else if (_direction == Direction.Right) {
-            super.SetPos(super.GetCurrentPos().Sum(super.GetCurrentVel()));
+        if (_direction == IDirection.Left)
+        {
+            Pos = Pos.Sub(Vel);
+        } else if (_direction == IDirection.Right)
+        {
+            Pos = Pos.Sum(Vel);
         }
     }
 }

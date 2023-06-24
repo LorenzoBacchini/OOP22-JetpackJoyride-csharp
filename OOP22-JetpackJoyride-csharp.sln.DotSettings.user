@@ -8,6 +8,12 @@
 &lt;/SessionState&gt;</s:String>
 	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=95ede02f_002D7a52_002D4d96_002Db838_002Dbbafb69f8c21/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="TestInput" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
   &lt;TestAncestor&gt;&#xD;
-    &lt;TestId&gt;MSTest::2D8A5175-506F-4796-9139-943DEB4DBF59::net7.0::BurreliMattiaTest.InputTest.TestInput&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;MSTest::60BA0B72-5D30-4A87-B182-3776116DE4D0::net7.0::AnnibaliniLorenzoTest.ScientistTest&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;MSTest::1B6155F3-0E95-474B-A224-EF99D3072CED::net7.0::BurreliMattiaTest.HitboxImplTest&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;MSTest::1B6155F3-0E95-474B-A224-EF99D3072CED::net7.0::BurreliMattiaTest.InputTest&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::43508AE1-FA80-4201-914F-DDE3F946D6B2::net7.0::SanchiEmanueleTest.SliderTests&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::43508AE1-FA80-4201-914F-DDE3F946D6B2::net7.0::SanchiEmanueleTest.SpriteTests&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::43508AE1-FA80-4201-914F-DDE3F946D6B2::net7.0::SanchiEmanueleTest.StatisticsTests&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;MSTest::FFB8C8C1-94FB-4146-BBB1-6AB178549C55::net7.0::BacchiniLorenzoTest.MoneyPatternTest&lt;/TestId&gt;&#xD;
   &lt;/TestAncestor&gt;&#xD;
 &lt;/SessionState&gt;</s:String></wpf:ResourceDictionary>
