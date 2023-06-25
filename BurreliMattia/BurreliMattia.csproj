@@ -6,9 +6,4 @@
         <Nullable>enable</Nullable>
     </PropertyGroup>
 
-    <ItemGroup>
-      <ProjectReference Include="..\BacchiniLorenzo\BacchiniLorenzo.csproj" />
-      <ProjectReference Include="..\SanchiEmanuele\SanchiEmanuele.csproj" />
-    </ItemGroup>
-
 </Project>

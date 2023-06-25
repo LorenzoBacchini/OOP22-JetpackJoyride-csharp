@@ -1,6 +1,5 @@
-﻿using AnnibaliniLorenzo.JetpackJoyride.Point2d;
-using AnnibaliniLorenzo.JetpackJoyride.Vector2d;
-using BurreliMattia.JetpackJoyride.Api.Hitbox;
+﻿using AnnibaliniLorenzo.JetpackJoyride;
+using BurreliMattia.JetpackJoyride.Api;
 using BacchiniLorenzo.JetpackJoyride.Api;
 
 namespace BacchiniLorenzo.JetpackJoyride.Impl;
@@ -17,7 +16,7 @@ public class Electrode : ObstacleImpl
     /// <summary>
     /// Constructor to create an Electrode obstacle.
     /// </summary>
-    public Electrode(Point2d pos, Vector2d vel, Orientation orientation, Hitbox hitbox) : base(
+    public Electrode(Point2d pos, Vector2d vel, Orientation orientation, IHitbox hitbox) : base(
         pos, vel, hitbox)
     {
         Orientation = orientation;

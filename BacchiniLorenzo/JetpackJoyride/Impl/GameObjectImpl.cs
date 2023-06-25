@@ -1,7 +1,6 @@
-﻿using AnnibaliniLorenzo.JetpackJoyride.Point2d;
-using AnnibaliniLorenzo.JetpackJoyride.Vector2d;
-using BurreliMattia.JetpackJoyride.Api.Hitbox;
-using BurreliMattia.JetpackJoyride.Impl.HitboxImpl;
+﻿using AnnibaliniLorenzo.JetpackJoyride;
+using BurreliMattia.JetpackJoyride.Api;
+using BurreliMattia.JetpackJoyride.Impl;
 using BacchiniLorenzo.JetpackJoyride.Api;
 
 namespace BacchiniLorenzo.JetpackJoyride.Impl;
@@ -29,17 +28,17 @@ public class GameObjectImpl : IGameObject
         Pos = Pos.Sum(Vel.Mul(DeltaTimeMultiplier * dt));
     }
 
-    public Hitbox Hitbox { get; }
+    public IHitbox Hitbox { get; }
 
     /// <summary>
     /// Constructor to create a GameObject
     /// </summary>
 
-    public GameObjectImpl(Point2d pos, Vector2d vel, Hitbox hitbox) 
+    public GameObjectImpl(Point2d pos, Vector2d vel, IHitbox hitbox) 
     {
         Pos = new Point2d(pos.GetX(), pos.GetY());
         Vel = new Vector2d(vel.GetX(), vel.GetY());
-        Hitbox = new HitboxImpl(hitbox.GetHeigthHitbox(), hitbox.GetWidthHitbox(), pos);
+        Hitbox = new HitboxImpl(hitbox.Height, hitbox.Width, pos);
     }
 
     public void FlipVelOnY()

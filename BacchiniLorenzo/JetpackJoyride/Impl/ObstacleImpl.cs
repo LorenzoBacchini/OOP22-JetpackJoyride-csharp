@@ -1,8 +1,7 @@
 ﻿using BacchiniLorenzo.JetpackJoyride.Api;
 using BacchiniLorenzo.JetpackJoyride.Impl;
-using AnnibaliniLorenzo.JetpackJoyride.Point2d;
-using AnnibaliniLorenzo.JetpackJoyride.Vector2d;
-using BurreliMattia.JetpackJoyride.Api.Hitbox;
+using AnnibaliniLorenzo.JetpackJoyride;
+using BurreliMattia.JetpackJoyride.Api;
 
 namespace BacchiniLorenzo.JetpackJoyride.Impl;
 
@@ -15,7 +14,7 @@ public abstract class ObstacleImpl : GameObjectImpl, IObstacle
     
     public bool Active { get; private set; }
 
-    public ObstacleImpl(Point2d pos, Vector2d vel, Hitbox hitbox) : base(pos, vel, hitbox)
+    public ObstacleImpl(Point2d pos, Vector2d vel, IHitbox hitbox) : base(pos, vel, hitbox)
     {
         SetActiveOn();
     }
@@ -23,12 +22,12 @@ public abstract class ObstacleImpl : GameObjectImpl, IObstacle
     public void SetActiveOn()
     {
         Active = true;
-        GetHitbox().SetHitboxActive();
+        Hitbox.HitBoxActive = true;
     }
     
     public void SetActiveOff()
     {
         Active = false;
-        GetHitbox().SetHitboxDisable();
+        Hitbox.HitBoxActive = false;
     }
 }

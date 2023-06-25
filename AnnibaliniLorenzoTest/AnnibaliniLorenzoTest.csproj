@@ -17,11 +17,8 @@
     </ItemGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\BacchiniLorenzo\BacchiniLorenzo.csproj" />
-    </ItemGroup>
-
-    <ItemGroup>
-      <Folder Include="Data\" />
+      <ProjectReference Include="..\AnnibaliniLorenzo\AnnibaliniLorenzo.csproj" />
+      <ProjectReference Include="..\BurreliMattia\BurreliMattia.csproj" />
     </ItemGroup>
 
 </Project>

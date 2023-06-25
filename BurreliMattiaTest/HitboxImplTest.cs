@@ -1,4 +1,5 @@
-﻿using BacchiniLorenzo.JetpackJoyride.Impl;
+﻿using AnnibaliniLorenzo.JetpackJoyride;
+using BacchiniLorenzo.JetpackJoyride.Impl;
 using BurreliMattia.JetpackJoyride.Api;
 using BurreliMattia.JetpackJoyride.Impl;
 
@@ -25,12 +26,12 @@ public class HitboxImplTest
 
         while (y >= -xPlayer) {
             entity.UpdateState(dt);
-            entity.Hitbox.updateHitbox(entity.Pos);
-            if (entity.Hitbox.checkCollision(hitboxPlayer)) {
+            entity.Hitbox.UpdateHitbox(entity.Pos);
+            if (entity.Hitbox.CheckCollision(hitboxPlayer)) {
                 y--;
-                entity.Pos= new Point2d(positionEntity.getX(), positionEntity.getY() + y);
+                entity.Pos= new Point2d(positionEntity.GetX(), positionEntity.GetY() + y);
                 break;
-            } else if (entity.Pos.getX() < 0) {
+            } else if (entity.Pos.GetX() < 0) {
                 Assert.Fail("Collision not detected");
                 break;
             }
