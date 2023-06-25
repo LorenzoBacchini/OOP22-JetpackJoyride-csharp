@@ -29,9 +29,9 @@ public double Height => this._height;
         }
     }
     
-    public Point2d UpLeftPoint => this._upLeftPoint;
+    public Point2d UpLeftPoint => new Point2d(_upLeftPoint.GetX(), _upLeftPoint.GetY());
 
-    public Point2d DownRightPoint => this._downRightPoint;
+    public Point2d DownRightPoint => new Point2d(_downRightPoint.GetX(), _downRightPoint.GetY());
 
     
     /// <summary>
@@ -45,7 +45,8 @@ public double Height => this._height;
         this._width = width;
         this._height = height;
         this._hitBoxActive = true;
-        
+        this.CalcPointPosition(posObject);
+
     }
 
     /// <summary>
